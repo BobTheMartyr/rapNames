@@ -35,7 +35,7 @@ app.get('/api/:commander', (request, response) => {
     if( deck[name] ){
         response.json( deck[name] )                                                                           //Put what you want to respond with inside the .json parentheses uses brackets because .notation doesnt work with spaces. Takes the query param and passes it as a key in the rappers object 
     } else {
-        response.json(rappers['unknown'])
+        response.json("I haven't gotten there yet")
     }
 })
 
