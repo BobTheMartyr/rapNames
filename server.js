@@ -28,8 +28,7 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')                                                //looks in the main directory for index.html
 })
 
-app.get('/api/:commander', (request, response) => {
-    response.sendFile(__dirname + '/decklist.html')                                 
+app.get('/api/:commander', (request, response) => {                                 
     const name = request.params.commander.toLowerCase()                                          //pulls the parameter out of the url and assigns it to a variable.  REQUEST.PARAMS.${NAME}                            
     if( deck[name] ){
         response.json( deck[name] )                                                              //Put what you want to respond with inside the .json parentheses uses brackets because .notation doesnt work with spaces. Takes the query param and passes it as a key in the rappers object 
@@ -67,7 +66,7 @@ const deck = {
             'Spirited Companion',
             'Seal Away' ,
             'Thalia, Guardian of Thraben' ,
-        ' Tocatli Honor Guard' ,
+            'Tocatli Honor Guard' ,
             'Tithe Taker',
             'Valorous Stance ',
             'Adeline, Resplendent Cathar',
@@ -89,9 +88,9 @@ const deck = {
             'Lion Sash' ,
             'Welcoming Vampire' ,
             'Cathar Commando' ,
-        ' Hushbringer' ,
+            'Hushbringer' ,
             'Linvala, Keeper of Silence' ,
-        ' Smothering Tithe',
+            'Smothering Tithe',
             "Oketra's Monument", 
             'Mangara, the Diplomat' ,
             "Kinjalli's Sunwing" ,
