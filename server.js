@@ -30,9 +30,9 @@ app.get('/', (request, response) => {
 
 app.get('/api/:commander', (request, response) => {
     response.sendFile(__dirname + '/decklist.html')                                 
-    const name = request.params.commander.toLowerCase()                                              //pulls the parameter out of the url and assigns it to a variable.  REQUEST.PARAMS.${NAME}                            
+    const name = request.params.commander.toLowerCase()                                          //pulls the parameter out of the url and assigns it to a variable.  REQUEST.PARAMS.${NAME}                            
     if( deck[name] ){
-        response.json( deck[name] )                                                                           //Put what you want to respond with inside the .json parentheses uses brackets because .notation doesnt work with spaces. Takes the query param and passes it as a key in the rappers object 
+        response.json( deck[name] )                                                              //Put what you want to respond with inside the .json parentheses uses brackets because .notation doesnt work with spaces. Takes the query param and passes it as a key in the rappers object 
     } else {
         response.json("I haven't gotten there yet")
     }
